@@ -1,3 +1,7 @@
+body{
+
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
@@ -5,6 +9,13 @@
   font-weight: 300;
   margin: 0;
 }
+
+main {
+	/*background-color: #d0d2d3;*/
+	display: flex;
+}
+
+/*HEADER PART*/
 
 header {
   background-color: #404041;
@@ -43,4 +54,144 @@ h2:after {
 
 h2:after {
     margin: 0 0 0 10px;
+}
+
+/*MAIN*/
+
+.game-left-side {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: #f7f7f7;
+  border-right: 1px solid #6e6e6e;
+}
+
+.left-side{
+	margin: 19px 19px;
+	background-color: #ffffff;
+	padding: 20px;
+	border: 2px solid #d0d2d3;
+}
+
+.set-range {
+
+}
+
+.update-button {
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 5px;
+	border: none;
+	background-color: gray;
+	padding: 3px;
+	border-radius: 20px;
+	color: white;
+	width: 118px;
+}
+
+.name-and-guess {
+  margin: 2px 19px;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+	padding: 10px 0;
+	margin: 5px;
+}
+
+.name-input {
+  width: 50%;
+}
+
+.num-range {
+	font-size: 17px;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.latest-score {
+	
+}
+
+.v-line {
+	display: flex;
+	border: 1px solid gray;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+.total-score {
+	display: flex;
+	justify-content: space-around;
+	padding: 10px;
+	text-align: center;
+}
+
+
+
+/*RESULTS LEFT*/
+
+.results-container {
+	
+	}
+
+.results-of-game {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #ffffff;
+  margin: 20px;
+}
+
+h3 {
+   margin-bottom: 25px;
+}
+
+.challenger-1-results,
+.challenger-2-results {
+  font-size: 16px;
+  font-weight: 700; 
+}
+
+.vs-text {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.winners-name {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.winner-text {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.bottom-shit {
+  display: flex;
+  margin: 0px 20px 0px 20px;
+  justify-content: space-between;
+}
+
+.guesses-text {
+
+}
+
+.mins-text {
+}
+
+.number-of-guesses,
+.number-of-mins {
+  font-size: 16px;
+  padding: 5px;
+  font-weight: 700;
 }
