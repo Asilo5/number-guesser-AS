@@ -30,18 +30,18 @@ var numberGuessedTwo = document.querySelector('.number-guessed-2');
 var levelOfScoreOne = document.querySelector('.num-score-1');
 var levelOfScoreTwo = document.querySelector('.num-score-2');
 
-
+var randomNumber = function () {
+	return Math.floor(Math.random() * (maxRangeInput.value - minRangeInput.value) + minRangeInput.value);
+}
 
 
 updateButton.addEventListener('click', givenInput);
 
 submitGuessButton.addEventListener('click', submitPrintScore);
 
-resetGuessButton.addEventListener('click', );
+// resetGuessButton.addEventListener('click', );
 
-clearGameButton.addEventListener('click', );
-
-
+// clearGameButton.addEventListener('click', );
 
 
 
@@ -59,6 +59,26 @@ function submitPrintScore () {
 	numberGuessedOne.innerText = guessOne.value;
 	numberGuessedTwo.innerText = guessTwo.value;
 }
+
+
+if (minRangeInput.value < randomNumber()) {
+	levelOfScoreOne.innerText = `That's too low!`;
+} else if (minRangeInput.value > randomNumber()) {
+    levelOfScoreOne.innerText = `That's too high!`;
+} else {
+    levelOfScoreOne.innerText = `BOOM!`;
+}
+
+
+if (maxRangeInput.value < randomNumber()) {
+    levelOfScoreTwo.innerText = `That's too low`;
+} else if (maxRangeInput.value > randomNumber()) {
+	levelOfScoreTwo.innerText = `That's too high!`;
+} else {
+    levelOfScoreOne.innerText = `BOOM!`;
+}
+
+
 
 
 
