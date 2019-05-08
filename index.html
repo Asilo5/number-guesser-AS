@@ -9,7 +9,7 @@
 </head>
 <body>
   <header>
-    <h1>NUMBER<span>GUESSER</span></h1>
+    <h1>NUMBER<span class="skinny-title">GUESSER</span></h1>
 	<h2>ULTIMATE CHALLENGER EDITION</h2>
   </header>
   <main>
@@ -21,11 +21,11 @@
 			  <input type="text" id="min-range" name="user-min-range">
 			  <label for="max-range"> Max Range </label>
 			  <input type="text" id="max-range" name="user-max-range">
-			  <button class="update-button"> Update </button>
+			  <button type="button" class="update-button"> UPDATE </button>
 		   </form>
 	   </article>
 	   <article class="name-and-guess left-side">
-	     <p>The current range is <span class="num-range"> 1 </span> to <span class="num-range"> 100 </span></p>
+	     <p>The current range is <span class="num-range range-one">  </span> to <span class="num-range range-two"> 0 </span></p>
 		   <form>
 		     <h3 class="name-one name">Challenger 1</h3>
 			 <label for="name-challenger-1">Name </label>
@@ -38,9 +38,9 @@
              <label for="guess-2"> Guess </label>
              <input type="number" id="guess-2" name="guess-for-2">
              <div class="buttons-groups">
-               <button class="submit-guess" id = "guess-button">Submit Guess </button>
-               <button class="reset-game" id = "guess-button"> Reset Game </button>
-               <button class="clear-game" id = "guess-button"> Clear Game </button>
+               <button type="button" class="submit-guess" id="guess-button">SUBMIT GUESS </button>
+               <button type="button" class="reset-game" id="guess-button"> RESET GUESS </button>
+               <button type="button" class="clear-game" id="guess-button"> CLEAR GAME </button>
              </div>
 		   </form>
 	   </article>
@@ -50,15 +50,15 @@
 		   <div class="score-for-1">
 		     <h4 class="challenger-1-score"> Challenger 1 Name </h4>
 		     <p> current guess </p>
-		     <p class="number-guessed-1"><span> 0 </span></p>
-		     <p class="num-score-1"> that's too high </p>
+		     <p class="number-guessed-1"> 0 </p>
+		     <p class="num-score-1"> Score </p>
 	       </div>
 	       <div class="v-line"></div>
 		   <div class="score-for-2">
 		     <h4 class="challenger-2-score"> Challenger 2 Name </h4>
 		     <p> current guess </p>
-		     <p class="number-guessed-2"><span> 0 </span></p>
-		     <p class="num-score-2"> that's too low </p>
+		     <p class="number-guessed-2"> 0 </p>
+		     <p class="num-score-2"> Score </p>
 		   </div>
 		</div>
 	   </article>
@@ -74,6 +74,6 @@
 	   </div>
 	</section>
   </main>
-<script type="text/javascript" href="main.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

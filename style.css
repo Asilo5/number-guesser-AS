@@ -4,6 +4,7 @@ body{
 
 * {
   box-sizing: border-box;
+  color: #6E6E6E;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -11,8 +12,8 @@ body{
 }
 
 main {
-	/*background-color: #d0d2d3;*/
-	display: flex;
+  background-color: #d0d2d3;
+  display: flex;
 }
 
 /*HEADER PART*/
@@ -29,9 +30,10 @@ h1 {
   font-weight: 700;
 }
 
-span {
+.skinny-title {
   font-size: 54px;
   font-weight: 300;
+  color: #DD1972;
 }
 
 h2 {
@@ -58,6 +60,7 @@ h2:after {
 
 /*MAIN*/
 
+
 .game-left-side {
   display: flex;
   flex-direction: column;
@@ -67,26 +70,29 @@ h2:after {
 }
 
 .left-side{
-	margin: 19px 19px;
-	background-color: #ffffff;
-	padding: 20px;
-	border: 2px solid #d0d2d3;
+  margin: 19px 19px;
+  background-color: #ffffff;
+  padding: 10px;
+  border: 2px solid #d0d2d3;
 }
 
 .set-range {
 
 }
 
+/*.update-button */
+button {
+  font-weight: 700;
+  border: none;
+  background-color: #6E6E6E;
+  padding: 5px;
+  border-radius: 20px;
+  color: #ffffff;
+  width: 28%;
+}
+
 .update-button {
-	font-size: 20px;
-	font-weight: bold;
-	margin-left: 5px;
-	border: none;
-	background-color: gray;
-	padding: 3px;
-	border-radius: 20px;
-	color: white;
-	width: 118px;
+  width: 20%;
 }
 
 .name-and-guess {
@@ -96,8 +102,8 @@ h2:after {
 }
 
 .name {
-	padding: 10px 0;
-	margin: 5px;
+  padding: 10px 0;
+  margin: 5px;
 }
 
 .name-input {
@@ -105,18 +111,18 @@ h2:after {
 }
 
 .num-range {
-	font-size: 17px;
-	text-decoration: underline;
-	font-weight: bold;
+  font-size: 17px;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .latest-score {
-	
+  
 }
 
 .v-line {
-	display: flex;
-	border: 1px solid gray;
+  display: flex;
+  border: 1px solid gray;
 }
 
 h3 {
@@ -129,36 +135,43 @@ h4 {
 }
 
 .total-score {
-	display: flex;
-	justify-content: space-around;
-	padding: 10px;
-	text-align: center;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  text-align: center;
 }
 
+.number-guessed-1,
+.number-guessed-2 {
+  font-weight: 800;
+  font-size: 68px;
+  color: #DD1972;
+}
 
 
 /*RESULTS LEFT*/
 
+
 .results-container {
-	
-	}
+  
+  }
 
 .results-of-game {
   display: flex;
   flex-direction: column;
   text-align: center;
   background-color: #ffffff;
-  margin: 20px;
-}
-
-h3 {
-   margin-bottom: 25px;
+  margin: 20px 40px 0px 40px;
+  width: 43%;
+  padding: 10px;
+  height: 100%;
+  border: 1px solid #6e6e6e;
 }
 
 .challenger-1-results,
 .challenger-2-results {
   font-size: 16px;
-  font-weight: 700; 
+  font-weight: 700;
 }
 
 .vs-text {
@@ -169,6 +182,7 @@ h3 {
 .winners-name {
   font-size: 28px;
   font-weight: 700;
+  padding-top: 30px;
 }
 
 .winner-text {
@@ -183,7 +197,6 @@ h3 {
 }
 
 .guesses-text {
-
 }
 
 .mins-text {
