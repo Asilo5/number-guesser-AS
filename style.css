@@ -127,6 +127,7 @@ button {
 
 .form-container {
   display: inline-block;
+  margin-right: 15%;
 }
 
 .name {
@@ -135,7 +136,7 @@ button {
 }
 
 .name-input {
-  width: 200%;
+  width: 150%;
 }
 
 .num-range {
