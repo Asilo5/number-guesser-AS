@@ -1,9 +1,5 @@
 
 
-// Range Input
-// User will be putting in his min-range and max-range
-// When they press update, min and max range will be stored and used to print current range in the name and guess section
-// Min and Max variables will also be used to make sure user does not go out of range
 var minRangeInput = document.querySelector('#min-range');
 var maxRangeInput = document.querySelector('#max-range');
 var updateButton = document.querySelector('.update-button');
@@ -30,18 +26,18 @@ var numberGuessedTwo = document.querySelector('.number-guessed-2');
 var levelOfScoreOne = document.querySelector('.num-score-1');
 var levelOfScoreTwo = document.querySelector('.num-score-2');
 
-
+var randomNumber = function () {
+	return Math.floor(Math.random() * (maxRangeInput.value - minRangeInput.value) + minRangeInput.value);
+}
 
 
 updateButton.addEventListener('click', givenInput);
 
 submitGuessButton.addEventListener('click', submitPrintScore);
 
-resetGuessButton.addEventListener('click', );
+// resetGuessButton.addEventListener('click', );
 
-clearGameButton.addEventListener('click', );
-
-
+// clearGameButton.addEventListener('click', );
 
 
 
@@ -61,7 +57,30 @@ function submitPrintScore () {
 }
 
 
+if (guessOne.value < randomNumber()) {
+	levelOfScoreOne.innerText = `That's too low!`;
+} else if (guessOne.value > randomNumber()) {
+    levelOfScoreOne.innerText = `That's too high!`;
+} else {
+    levelOfScoreOne.innerText = `BOOM!`;
+}
 
+
+if (guessTwo.value < randomNumber()) {
+    levelOfScoreTwo.innerText = `That's too low`;
+} else if (guessTwo.value > randomNumber()) {
+	levelOfScoreTwo.innerText = `That's too high!`;
+} else {
+    levelOfScoreOne.innerText = `BOOM!`;
+}
+
+
+
+
+// Range Input
+// User will be putting in his min-range and max-range
+// When they press update, min and max range will be stored and used to print current range in the name and guess section
+// Min and Max variables will also be used to make sure user does not go out of range
 
 
 // Name and Guess
