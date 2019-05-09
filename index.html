@@ -17,10 +17,14 @@
 	   <article class="set-range left-side">
 	     <h3> Set Range</h3>
 		   <form>
-			  <label for="min-range"> Min Range </label>
-			  <input type="text" id="min-range" name="user-min-range">
-			  <label for="max-range"> Max Range </label>
-			  <input type="text" id="max-range" name="user-max-range">
+		   	  <div class="min-range-container range-containers">
+			    <label for="min-range"> Min Range </label>
+			    <input type="text" id="min-range" name="user-min-range">
+			  </div>
+			  <div class="max-range-container range-containers">
+			    <label for="max-range"> Max Range </label>
+			    <input type="text" id="max-range" name="user-max-range">
+			  </div>
 			  <button type="button" class="update-button"> UPDATE </button>
 		   </form>
 	   </article>
@@ -28,15 +32,23 @@
 	     <p>The current range is <span class="num-range range-one">  </span> to <span class="num-range range-two"> 0 </span></p>
 		   <form>
 		     <h3 class="name-one name">Challenger 1</h3>
-			 <label for="name-challenger-1">Name </label>
-			 <input type="text" id="name-challenger-1" name="challenger-1" class="name-input">
-             <label for="guess-1"> Guess </label>
-             <input type="number" id="guess-1" name="guess-for-1">
+		     <div class="form-container">
+			   <label for="name-challenger-1">Name </label>
+			   <input type="text" id="name-challenger-1" name="challenger-1" class="name-input">
+			 </div>
+			 <div class="form-container">
+               <label for="guess-1"> Guess </label>
+               <input type="number" id="guess-1" name="guess-for-1">
+             </div>
 			 <h3 class="name-two name">Challenger 2</h3>
-		     <label for="name-challenger-2">Name </label>
-			 <input type="text" id="name-challenger-2" name="challenger-2" class="name-input">
-             <label for="guess-2"> Guess </label>
-             <input type="number" id="guess-2" name="guess-for-2">
+			 <div class="form-container">
+		       <label for="name-challenger-2">Name </label>
+			   <input type="text" id="name-challenger-2" name="challenger-2" class="name-input">
+			 </div>
+			 <div class="form-container">
+               <label for="guess-2"> Guess </label>
+               <input type="number" id="guess-2" name="guess-for-2">
+             </div>
              <div class="buttons-groups">
                <button type="button" class="submit-guess" id="guess-button">SUBMIT GUESS </button>
                <button type="button" class="reset-game" id="guess-button"> RESET GUESS </button>
