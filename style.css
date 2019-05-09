@@ -194,6 +194,8 @@ h4 {
   display: flex;
   margin: 0px 20px 0px 20px;
   justify-content: space-between;
+  border-top: 1px solid black;
+  padding-top: 6px;
 }
 
 .guesses-text {
