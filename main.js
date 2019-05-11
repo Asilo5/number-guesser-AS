@@ -1,14 +1,12 @@
 
 
-<<<<<<< HEAD
-=======
 // Range Input
 // User will be putting in his min-range and max-range
 // When they press update, min and max range will be stored and used to print current range in the name and guess section
 // Min and Max variables will also be used to make sure user does not go out of range
 var allInputs = document.querySelectorAll('input');
 
->>>>>>> a3d37d4b7e57457807df53f38c183cde0d470a6f
+
 var minRangeInput = document.querySelector('#min-range');
 var maxRangeInput = document.querySelector('#max-range');
 var updateButton = document.querySelector('.update-button');
@@ -24,11 +22,10 @@ var guessTwo = document.querySelector('#guess-2');
 
 var submitGuessButton = document.querySelector('.submit-guess');
 var resetGuessButton = document.querySelector('.reset-game');
-<<<<<<< HEAD
-var clearGameButton = document.querySelector('.clear-game');
-=======
+
+
 var clearButton = document.querySelector('.clear-game');
->>>>>>> a3d37d4b7e57457807df53f38c183cde0d470a6f
+
 
 var challengerScoreOne = document.querySelector('.challenger-1-score');
 var challengerScoreTwo = document.querySelector('.challenger-2-score');
