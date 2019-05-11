@@ -15,7 +15,7 @@ var guessTwo = document.querySelector('#guess-2');
 
 var submitGuessButton = document.querySelector('.submit-guess');
 var resetGuessButton = document.querySelector('.reset-game');
-var clearGameButton = document.querySelector('.clearGameButton');
+var clearGameButton = document.querySelector('.clear-game');
 
 var challengerScoreOne = document.querySelector('.challenger-1-score');
 var challengerScoreTwo = document.querySelector('.challenger-2-score');
@@ -41,6 +41,12 @@ submitGuessButton.addEventListener('click', submitPrintScore);
 
 
 
+// Function that resets the the form
+
+function resetInputGiven () {
+
+}
+
 
 
 function givenInput () {
@@ -56,23 +62,23 @@ function submitPrintScore () {
 	numberGuessedTwo.innerText = guessTwo.value;
 }
 
+// To work on later
+// if (guessOne.value < randomNumber()) {
+// 	levelOfScoreOne.innerText = `That's too low!`;
+// } else if (guessOne.value > randomNumber()) {
+//     levelOfScoreOne.innerText = `That's too high!`;
+// } else if () {
+//     levelOfScoreOne.innerText = `BOOM!`;
+// }
 
-if (guessOne.value < randomNumber()) {
-	levelOfScoreOne.innerText = `That's too low!`;
-} else if (guessOne.value > randomNumber()) {
-    levelOfScoreOne.innerText = `That's too high!`;
-} else {
-    levelOfScoreOne.innerText = `BOOM!`;
-}
 
-
-if (guessTwo.value < randomNumber()) {
-    levelOfScoreTwo.innerText = `That's too low`;
-} else if (guessTwo.value > randomNumber()) {
-	levelOfScoreTwo.innerText = `That's too high!`;
-} else {
-    levelOfScoreOne.innerText = `BOOM!`;
-}
+// if (guessTwo.value < randomNumber()) {
+//     levelOfScoreTwo.innerText = `That's too low`;
+// } else if (guessTwo.value > randomNumber()) {
+// 	levelOfScoreTwo.innerText = `That's too high!`;
+// } else if () {
+//     levelOfScoreOne.innerText = `BOOM!`;
+// }
 
 
 
