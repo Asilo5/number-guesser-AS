@@ -4,6 +4,8 @@
 // User will be putting in his min-range and max-range
 // When they press update, min and max range will be stored and used to print current range in the name and guess section
 // Min and Max variables will also be used to make sure user does not go out of range
+var allInputs = document.querySelectorAll('input');
+
 var minRangeInput = document.querySelector('#min-range');
 var maxRangeInput = document.querySelector('#max-range');
 var updateButton = document.querySelector('.update-button');
@@ -19,7 +21,7 @@ var guessTwo = document.querySelector('#guess-2');
 
 var submitGuessButton = document.querySelector('.submit-guess');
 var resetGuessButton = document.querySelector('.reset-game');
-var clearGameButton = document.querySelector('.clearGameButton');
+var clearButton = document.querySelector('.clear-game');
 
 var challengerScoreOne = document.querySelector('.challenger-1-score');
 var challengerScoreTwo = document.querySelector('.challenger-2-score');
@@ -41,7 +43,7 @@ submitGuessButton.addEventListener('click', submitPrintScore);
 
 // resetGuessButton.addEventListener('click', );
 
-// clearGameButton.addEventListener('click', );
+clearButton.addEventListener('click', clearGame);
 
 
 
@@ -78,8 +80,16 @@ if (maxRangeInput.value < randomNumber()) {
     levelOfScoreOne.innerText = `BOOM!`;
 }
 
+//Create a function that clears all of the number inputs
+//The function should go through and empty out each input
 
+function clearGame () {
+  for (var i = 0; i < allInputs.length; i++) {
+  	console.log(allInputs[i].value = "");
+  }
+  //return to original latest score
 
+}
 
 
 
