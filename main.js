@@ -50,7 +50,7 @@ resetGuessButton.addEventListener('click', resetInputGiven);
 
 clearButton.addEventListener('click', clearGame);
 
-// 
+inputForm.addEventListener('keyup', disableClearButton);
 
 
 function minAndMaxRangeInput () {
@@ -74,6 +74,7 @@ function submitPrintScore () {
 	numberGuessedTwo.innerText = guessTwo.value;
 
   resetGuessButton.disabled = false;
+  resetGuessButton.style = "background-color:#6E6E6E"
 
 	scoreOutput();
 }
@@ -109,6 +110,10 @@ function resetInputGiven () {
   randomNumber();
 
   resetGuessButton.disabled = true;
+  resetGuessButton.style = "background-color:#D0D2D3"
+
+  clearButton.disabled = true;
+  clearButton.style = "background-color:#D0D2D3";
 }
 
 
@@ -137,13 +142,6 @@ function scoreOutput() {
   };
  } 
  
- // Target buttons to enable and change the of the buttons 
- // function enableButtons () {
-
- // }
-
-
-
 
 //Create a function that clears all of the number inputs
 //The function should go through and empty out each input
@@ -154,30 +152,33 @@ function clearGame() {
   	console.log(allInputs[i].value = "");
   }
   clearButton.disabled = true;
+  clearButton.style = "background-color:#D0D2D3";
 }
 
-//function that turns on the clear and guess buttons
 
 //disabled when entered
 //event listener added to the input fields
 //"this" calls the event listener - check the length
-inputForm.addEventListener('keyup', disableClearButton);
+
 
 function disableClearButton() {
   for (var i = 0; i < allInputs.length; i++) {
     if (allInputs[i].value !== "") {
       console.log('clear button is enabled');
       clearButton.disabled = false;
+      clearButton.style = "background-color:#6E6E6E";
 }
 }
 };
 
-
+// function changeButtonColor() {
 // if (clearButton.disabled === true) {
-//   clearButton.css.style = "background-color:#000000"
+//   clearButton.style = "background-color:#000000"
 // } else {
-//    clearButton.css.style = "background-color:#ffffff"
+//    clearButton.style = "background-color:#ffffff"
 // }
+// }
+// changeButtonColor();
 
 // Range Input
 // User will be putting in his min-range and max-range

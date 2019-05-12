@@ -119,6 +119,11 @@ button {
   display: inline;
 }
 
+.reset-game,
+.clear-game {
+  background-color: #D0D2D3;
+}
+
 .name-and-guess {
   margin: 2px 19px;
   display: flex;
