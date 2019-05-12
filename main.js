@@ -79,14 +79,6 @@ function submitPrintScore () {
 	scoreOutput();
 }
 
-// function clearGame () {
-//   for (var i = 0; i < allInputs.length; i++) {
-//   	console.log(allInputs[i].value = "");
-//   }
-//   //return to original latest score
-
-// }
-
 // Function that resets the the form
 
 function resetInputGiven () {
