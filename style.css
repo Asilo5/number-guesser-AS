@@ -219,6 +219,8 @@ h4 {
   display: flex;
   margin: 0px 20px 0px 20px;
   justify-content: space-between;
+  border-top: 1px solid black;
+  padding-top: 6px;
 }
 
 .guesses-text {
@@ -233,3 +235,8 @@ h4 {
   padding: 5px;
   font-weight: 700;
 }
+
+
+/*@media (min-width: 320px;) {
+	
+}*/

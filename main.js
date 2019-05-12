@@ -21,7 +21,10 @@ var guessTwo = document.querySelector('#guess-2');
 
 var submitGuessButton = document.querySelector('.submit-guess');
 var resetGuessButton = document.querySelector('.reset-game');
+
+
 var clearButton = document.querySelector('.clear-game');
+
 
 var challengerScoreOne = document.querySelector('.challenger-1-score');
 var challengerScoreTwo = document.querySelector('.challenger-2-score');
@@ -32,27 +35,37 @@ var numberGuessedTwo = document.querySelector('.number-guessed-2');
 var levelOfScoreOne = document.querySelector('.num-score-1');
 var levelOfScoreTwo = document.querySelector('.num-score-2');
 
-var randomNumber = function () {
-	return Math.floor(Math.random() * (maxRangeInput.value - minRangeInput.value) + minRangeInput.value);
-}
+var inputForm = document.querySelector('.form-one');
+
+var randomNumberChosen;
 
 
-updateButton.addEventListener('click', givenInput);
+
+
+updateButton.addEventListener('click', minAndMaxRangeInput);
 
 submitGuessButton.addEventListener('click', submitPrintScore);
 
-// resetGuessButton.addEventListener('click', );
+resetGuessButton.addEventListener('click', resetInputGiven);
 
 clearButton.addEventListener('click', clearGame);
 
+// 
 
 
 
-
-function givenInput () {
+function minAndMaxRangeInput () {
 	firstRange.innerText = minRangeInput.value;
     secondRange.innerText = maxRangeInput.value;
+
+    randomNumber();
 }
+
+function randomNumber() {
+	randomNumberChosen = Math.floor(Math.random() * (Number(maxRangeInput.value) - Number(minRangeInput.value) + 1) + Number(minRangeInput.value));
+  console.log(randomNumberChosen);
+}
+
 
 function submitPrintScore () {
 	challengerScoreOne.innerText = firstChallengerName.value;
@@ -60,28 +73,9 @@ function submitPrintScore () {
 
 	numberGuessedOne.innerText = guessOne.value;
 	numberGuessedTwo.innerText = guessTwo.value;
+
+	scoreOutput();
 }
-
-
-if (minRangeInput.value < randomNumber()) {
-	levelOfScoreOne.innerText = `That's too low!`;
-} else if (minRangeInput.value > randomNumber()) {
-    levelOfScoreOne.innerText = `That's too high!`;
-} else {
-    levelOfScoreOne.innerText = `BOOM!`;
-}
-
-
-if (maxRangeInput.value < randomNumber()) {
-    levelOfScoreTwo.innerText = `That's too low`;
-} else if (maxRangeInput.value > randomNumber()) {
-	levelOfScoreTwo.innerText = `That's too high!`;
-} else {
-    levelOfScoreOne.innerText = `BOOM!`;
-}
-
-//Create a function that clears all of the number inputs
-//The function should go through and empty out each input
 
 function clearGame () {
   for (var i = 0; i < allInputs.length; i++) {
@@ -91,7 +85,73 @@ function clearGame () {
 
 }
 
+// Function that resets the the form
 
+function resetInputGiven () {
+  for (var i = 0; i < allInputs.length; i++) {
+    console.log(allInputs[i].value = "");
+  }
+  // inputForm.reset();
+
+  levelOfScoreOne.innerText = 'Score';
+  levelOfScoreTwo.innerText = 'Score';
+  
+  numberGuessedOne.innerText = '0';
+  numberGuessedTwo.innerText = '0';
+
+  firstRange.innerText = '0';
+  secondRange.innerText = '0';
+
+  challengerScoreOne.innerText = 'Challenger 1 Name';
+  challengerScoreTwo.innerText = 'Challenger 2 Name';
+
+  randomNumber();
+}
+
+
+
+function scoreOutput() {
+  if (parseInt(guessOne.value) < randomNumberChosen) {
+	  levelOfScoreOne.innerText = `That's too low!`;
+	  console.log ('Amand');
+  } else if (parseInt(guessOne.value) > randomNumberChosen) {
+      levelOfScoreOne.innerText = `That's too high!`;
+      console.log ('Consi');
+  } else if (parseInt(guessOne.value) === randomNumberChosen) {
+      levelOfScoreOne.innerText = `BOOM!`;
+      console.log ('Elo');
+  };
+
+  if (parseInt(guessTwo.value) < randomNumberChosen) {
+      levelOfScoreTwo.innerText = `That's too low`;
+      console.log ('Sie');
+  } else if (parseInt(guessTwo.value) > randomNumberChosen) {
+	  levelOfScoreTwo.innerText = `That's too high!`;
+	  console.log ('Rra');
+  } else if (parseInt(guessTwo.value) === randomNumberChosen) {
+      levelOfScoreTwo.innerText = `BOOM!`;
+      console.log ('Lop');
+  };
+ } 
+ 
+ // Target buttons to enable and change the of the buttons 
+ // function enableButtons () {
+
+ // }
+
+
+
+
+//Create a function that clears all of the number inputs
+//The function should go through and empty out each input
+
+
+
+
+// Range Input
+// User will be putting in his min-range and max-range
+// When they press update, min and max range will be stored and used to print current range in the name and guess section
+// Min and Max variables will also be used to make sure user does not go out of range
 
 
 // Name and Guess
