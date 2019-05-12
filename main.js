@@ -21,7 +21,7 @@ var guessTwo = document.querySelector('#guess-2');
 
 var submitGuessButton = document.querySelector('.submit-guess');
 
-var resetButton = document.querySelector('.reset-game');
+var resetGuessButton = document.querySelector('.reset-game');
 
 var clearButton = document.querySelector('.clear-game');
 
@@ -73,16 +73,18 @@ function submitPrintScore () {
 	numberGuessedOne.innerText = guessOne.value;
 	numberGuessedTwo.innerText = guessTwo.value;
 
+  resetGuessButton.disabled = false;
+
 	scoreOutput();
 }
 
-function clearGame () {
-  for (var i = 0; i < allInputs.length; i++) {
-  	console.log(allInputs[i].value = "");
-  }
-  //return to original latest score
+// function clearGame () {
+//   for (var i = 0; i < allInputs.length; i++) {
+//   	console.log(allInputs[i].value = "");
+//   }
+//   //return to original latest score
 
-}
+// }
 
 // Function that resets the the form
 
@@ -105,6 +107,8 @@ function resetInputGiven () {
   challengerScoreTwo.innerText = 'Challenger 2 Name';
 
   randomNumber();
+
+  resetGuessButton.disabled = true;
 }
 
 
@@ -145,8 +149,6 @@ function scoreOutput() {
 //The function should go through and empty out each input
 
 
-//
-
 function clearGame() {
   for (var i = 0; i < allInputs.length; i++) {
   	console.log(allInputs[i].value = "");
@@ -154,13 +156,7 @@ function clearGame() {
   clearButton.disabled = true;
 }
 
-
-//Disable buttons when the page loads
-// resetButton.disabled = true;
-// clearButton.disabled = true;
-
 //function that turns on the clear and guess buttons
-//once the user clicks the submit button, the two buttons will change to false
 
 //disabled when entered
 //event listener added to the input fields
@@ -169,21 +165,18 @@ inputForm.addEventListener('keyup', disableClearButton);
 
 function disableClearButton() {
   for (var i = 0; i < allInputs.length; i++) {
-      if (allInputs[i].value !== "") {
-  console.log('clear button is enabled');
-  clearButton.disabled = false;
-//  } else {
-// //    console.log('clear button is enabled');
-//    clearButton.disabled = true;
+    if (allInputs[i].value !== "") {
+      console.log('clear button is enabled');
+      clearButton.disabled = false;
 }
 }
 };
 
 
-// if (clearbutton.disabled === true) {
-//   clearButton.css.style = "background-color:#"
+// if (clearButton.disabled === true) {
+//   clearButton.css.style = "background-color:#000000"
 // } else {
-//    clearButton.css.style = "background-color:#"
+//    clearButton.css.style = "background-color:#ffffff"
 // }
 
 // Range Input
