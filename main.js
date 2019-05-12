@@ -20,8 +20,8 @@ var guessOne = document.querySelector('#guess-1');
 var guessTwo = document.querySelector('#guess-2');
 
 var submitGuessButton = document.querySelector('.submit-guess');
-var resetGuessButton = document.querySelector('.reset-game');
 
+var resetGuessButton = document.querySelector('.reset-game');
 
 var clearButton = document.querySelector('.clear-game');
 
@@ -50,8 +50,7 @@ resetGuessButton.addEventListener('click', resetInputGiven);
 
 clearButton.addEventListener('click', clearGame);
 
-// 
-
+inputForm.addEventListener('keyup', disableClearButton);
 
 
 function minAndMaxRangeInput () {
@@ -74,16 +73,19 @@ function submitPrintScore () {
 	numberGuessedOne.innerText = guessOne.value;
 	numberGuessedTwo.innerText = guessTwo.value;
 
+  resetGuessButton.disabled = false;
+  resetGuessButton.style = "background-color:#6E6E6E"
+
 	scoreOutput();
 }
 
-function clearGame () {
-  for (var i = 0; i < allInputs.length; i++) {
-  	console.log(allInputs[i].value = "");
-  }
-  //return to original latest score
+// function clearGame () {
+//   for (var i = 0; i < allInputs.length; i++) {
+//   	console.log(allInputs[i].value = "");
+//   }
+//   //return to original latest score
 
-}
+// }
 
 // Function that resets the the form
 
@@ -106,6 +108,12 @@ function resetInputGiven () {
   challengerScoreTwo.innerText = 'Challenger 2 Name';
 
   randomNumber();
+
+  resetGuessButton.disabled = true;
+  resetGuessButton.style = "background-color:#D0D2D3"
+
+  clearButton.disabled = true;
+  clearButton.style = "background-color:#D0D2D3";
 }
 
 
@@ -134,19 +142,43 @@ function scoreOutput() {
   };
  } 
  
- // Target buttons to enable and change the of the buttons 
- // function enableButtons () {
-
- // }
-
-
-
 
 //Create a function that clears all of the number inputs
 //The function should go through and empty out each input
 
 
+function clearGame() {
+  for (var i = 0; i < allInputs.length; i++) {
+  	console.log(allInputs[i].value = "");
+  }
+  clearButton.disabled = true;
+  clearButton.style = "background-color:#D0D2D3";
+}
 
+
+//disabled when entered
+//event listener added to the input fields
+//"this" calls the event listener - check the length
+
+
+function disableClearButton() {
+  for (var i = 0; i < allInputs.length; i++) {
+    if (allInputs[i].value !== "") {
+      console.log('clear button is enabled');
+      clearButton.disabled = false;
+      clearButton.style = "background-color:#6E6E6E";
+}
+}
+};
+
+// function changeButtonColor() {
+// if (clearButton.disabled === true) {
+//   clearButton.style = "background-color:#000000"
+// } else {
+//    clearButton.style = "background-color:#ffffff"
+// }
+// }
+// changeButtonColor();
 
 // Range Input
 // User will be putting in his min-range and max-range
