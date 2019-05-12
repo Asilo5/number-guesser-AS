@@ -20,7 +20,7 @@ var guessOne = document.querySelector('#guess-1');
 var guessTwo = document.querySelector('#guess-2');
 
 var submitGuessButton = document.querySelector('.submit-guess');
-var resetGuessButton = document.querySelector('.reset-game');
+var resetButton = document.querySelector('.reset-game');
 var clearButton = document.querySelector('.clear-game');
 
 var challengerScoreOne = document.querySelector('.challenger-1-score');
@@ -32,6 +32,8 @@ var numberGuessedTwo = document.querySelector('.number-guessed-2');
 var levelOfScoreOne = document.querySelector('.num-score-1');
 var levelOfScoreTwo = document.querySelector('.num-score-2');
 
+var inputForm = document.querySelector('.form-one');
+
 var randomNumber = function () {
 	return Math.floor(Math.random() * (maxRangeInput.value - minRangeInput.value) + minRangeInput.value);
 }
@@ -41,18 +43,17 @@ updateButton.addEventListener('click', givenInput);
 
 submitGuessButton.addEventListener('click', submitPrintScore);
 
-// resetGuessButton.addEventListener('click', );
-
+// resetButton.addEventListener('click', );
+ 
 clearButton.addEventListener('click', clearGame);
-
-
 
 
 
 function givenInput () {
 	firstRange.innerText = minRangeInput.value;
-    secondRange.innerText = maxRangeInput.value;
+  secondRange.innerText = maxRangeInput.value;
 }
+
 
 function submitPrintScore () {
 	challengerScoreOne.innerText = firstChallengerName.value;
@@ -83,14 +84,47 @@ if (maxRangeInput.value < randomNumber()) {
 //Create a function that clears all of the number inputs
 //The function should go through and empty out each input
 
-function clearGame () {
+//
+
+function clearGame() {
   for (var i = 0; i < allInputs.length; i++) {
   	console.log(allInputs[i].value = "");
   }
-  //return to original latest score
-
+  clearButton.disabled = true;
 }
 
+
+//Disable buttons when the page loads
+// resetButton.disabled = true;
+// clearButton.disabled = true;
+
+//function that turns on the clear and guess buttons
+//once the user clicks the submit button, the two buttons will change to false
+
+//disabled when entered
+//event listener added to the input fields
+//"this" calls the event listener - check the length
+inputForm.addEventListener('keyup', disableClearButton);
+
+function disableClearButton() {
+  for (var i = 0; i < allInputs.length; i++) {
+      if (allInputs[i].value !== "") {
+  console.log('clear button is enabled');
+  clearButton.disabled = false;
+//  } else {
+// //    console.log('clear button is enabled');
+//    clearButton.disabled = true;
+}
+}
+};
+
+
+
+// if (clearbutton.disabled === true) {
+//   clearButton.css.style = "background-color:#"
+// } else {
+//    clearButton.css.style = "background-color:#"
+// }
 
 
 
