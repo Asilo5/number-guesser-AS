@@ -46,7 +46,12 @@ h2 {
   width: 462px;
 }
 
-h2:before,
+.line {
+  width: 96px;
+  border: 1px solid #ffffff;
+}
+
+/*h2:before,
 h2:after {
     border-top: 1px solid;
     content: '';
@@ -56,7 +61,7 @@ h2:after {
 
 h2:after {
     margin: 0 0 0 10px;
-}
+}*/
 
 /*MAIN*/
 
@@ -75,11 +80,10 @@ h2:after {
   border: 2px solid #d0d2d3;
 }
 
-form {
-}
 
 label {
   display: block;
+  font-size: 20px;
 }
 
 .range-containers {
@@ -90,33 +94,50 @@ label {
   margin: 5px 5% 0 0;
 }
 
+.range {
+  width: 205px;
+  height: 37px;
+}
+
 .max-range-container {
   margin: 0 5% 0 0;
 }
 
-input {
-  width: 100%;
+.name-box {
+  width: 392px;
+  height: 37px;
 }
 
-.set-range {
+.guess-box {
+  width: 185px;
+  height: 37px;
 }
 
-button {
+.button{
+  
   font-weight: 700;
-  border: none;
   background-color: #6E6E6E;
-  padding: 5px;
+  padding: 6px;
   border-radius: 20px;
   color: #ffffff;
-  width: 150px;
-  margin-top: 25px;
-  margin-right: 4%;
-
+  width: 184px;
+  margin: 25px 4px 3px 23px;
+  font-size: 19px;
 }
 
 .update-button {
-  width: 100px;
-  display: inline;
+  width: 123px;
+  font-weight: 700;
+  background-color: #6E6E6E;
+  padding: 6px;
+  border-radius: 20px;
+  color: #ffffff;
+  width: 151px;
+  font-size: 19px;
+}
+
+.submit-guess {
+  margin-left: 0px;
 }
 
 .reset-game,
@@ -132,12 +153,16 @@ button {
 
 .form-container {
   display: inline-block;
-  margin-right: 15%;
+  margin-right: 5%;
+}
+
+.form-container-guess {
+  display: inline-block;
 }
 
 .name {
   padding: 10px 0;
-  margin: 5px;
+  margin: 5px 0;
 }
 
 .name-input {
@@ -150,8 +175,8 @@ button {
   font-weight: bold;
 }
 
-.latest-score {
-  
+.clear-game {
+  margin-right: 0px; 
 }
 
 .v-line {
@@ -161,11 +186,16 @@ button {
 
 h3 {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 h4 {
   font-weight: 700;
+  font-size: 18px;
+}
+
+.num-score-1, .num-score-2 {
+  font-size: 18px;
 }
 
 .total-score {
@@ -178,7 +208,7 @@ h4 {
 .number-guessed-1,
 .number-guessed-2 {
   font-weight: 800;
-  font-size: 68px;
+  font-size: 87px;
   color: #DD1972;
 }
 
@@ -210,14 +240,14 @@ h4 {
 }
 
 .winners-name {
-  font-size: 28px;
+  font-size: 33px;
   font-weight: 700;
   padding-top: 30px;
 }
 
 .winner-text {
-  font-size: 28px;
-  margin-bottom: 25px;
+  font-size: 35px;
+  margin-bottom: 21px;
 }
 
 .bottom-shit {
@@ -239,6 +269,12 @@ h4 {
   font-size: 16px;
   padding: 5px;
   font-weight: 700;
+} 
+
+.challenger-card-names {
+  border-bottom: 1px solid #000;
+  margin: 0px 20px 0px 20px;
+  padding-bottom: 5px;
 }
 
 
@@ -286,12 +322,17 @@ h4 {
   h4 {
     padding-top: 10px;
   }
+
   .results-of-game {
     width: 90%;
     margin: 20px 11px 0px 15px;
   }
+
   .challenger-card-names {
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid #000;
+    margin: 0px 20px 0px 20px;
+    padding-bottom: 5px;
   }
 }

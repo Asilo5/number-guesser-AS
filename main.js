@@ -55,7 +55,7 @@ inputForm.addEventListener('keyup', disableClearButton);
 
 function minAndMaxRangeInput () {
 	firstRange.innerText = minRangeInput.value;
-    secondRange.innerText = maxRangeInput.value;
+  secondRange.innerText = maxRangeInput.value;
 
     randomNumber();
 }
