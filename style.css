@@ -121,7 +121,6 @@ button {
 
 .form-two-container {
   display: inline-block;
-  margin-right: 15%;
 }
 
 .name {
@@ -130,7 +129,11 @@ button {
 }
 
 .name-input {
-  width: 150%;
+  width: 100%;
+}
+
+.guess-input {
+  width: 80%;
 }
 
 .displayed-num-range {
