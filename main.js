@@ -39,6 +39,8 @@ var inputForm = document.querySelector('.form-one');
 
 var randomNumberChosen;
 
+var rightSideOfGame = document.querySelector('.results-of-game');
+
 
 
 
@@ -120,6 +122,7 @@ function scoreOutput() {
   } else if (parseInt(guessOne.value) === randomNumberChosen) {
       levelOfScoreOne.innerText = `BOOM!`;
       console.log ('Elo');
+      winningCard();
   };
 
   if (parseInt(guessTwo.value) < randomNumberChosen) {
@@ -131,6 +134,7 @@ function scoreOutput() {
   } else if (parseInt(guessTwo.value) === randomNumberChosen) {
       levelOfScoreTwo.innerText = `BOOM!`;
       console.log ('Lop');
+      winningCard();
   };
  } 
  
@@ -163,6 +167,19 @@ function disableClearButton() {
 }
 };
 
+// rightSideOfGame.addEventListener('click', winningCard);
+
+function winningCard() {
+  rightSideOfGame.insertAdjacentHTML('afterbegin', 
+    ` <h3 class="challenger-card-names"><span class="challenger-1-results">CHALLENGER 1 NAME</span> <span class="vs-text">VS</span> <span class="challenger-2-results">CHALLENGER 2 NAME</span></h3>
+      <h5 class="winners-name">CHALLENGER 1 NAME</h5>
+      <h6 class="winner-text">WINNER</h6>
+      <div class="bottom-of-results-card">
+        <p class="guesses-text"><span class="number-of-guesses">0</span>GUESSES    </p>
+        <p class="mins-text"><span class="number-of-mins">0.0</span>MINUTES</p>
+        <p>IMG</p>
+      </div>`)
+}
 // function changeButtonColor() {
 // if (clearButton.disabled === true) {
 //   clearButton.style = "background-color:#000000"
