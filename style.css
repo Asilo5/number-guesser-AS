@@ -1,7 +1,4 @@
-body{
-
-}
-
+/*BODY OF PAGE*/
 * {
   box-sizing: border-box;
   color: #6E6E6E;
@@ -16,8 +13,7 @@ main {
   display: flex;
 }
 
-/*HEADER PART*/
-
+/*HEADER*/
 header {
   background-color: #404041;
   padding: 10px 0;
@@ -59,7 +55,6 @@ h2:after {
 }
 
 /*MAIN*/
-
 .game-left-side {
   display: flex;
   flex-direction: column;
@@ -111,7 +106,6 @@ button {
   width: 150px;
   margin-top: 25px;
   margin-right: 4%;
-
 }
 
 .update-button {
@@ -240,7 +234,6 @@ h4 {
   padding: 5px;
   font-weight: 700;
 }
-
 
 @media screen and (max-width: 320px) {
   h1 {
