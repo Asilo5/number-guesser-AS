@@ -298,8 +298,15 @@ h4 {
   h2:after {
 
   }
+  .name-box {
+    width: 100%;
+  }
+  .range {
+    width: 233px;
+  }
   .update-button {
     width: 100%;
+    margin-top: 16px;
   }
   button {
     width: 100%;
@@ -335,4 +342,5 @@ h4 {
     margin: 0px 20px 0px 20px;
     padding-bottom: 5px;
   }
+
 }
