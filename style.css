@@ -55,6 +55,7 @@ h2:after {
 }
 
 /*MAIN*/
+/*LEFT SIDE*/
 .game-left-side {
   display: flex;
   flex-direction: column;
@@ -63,14 +64,11 @@ h2:after {
   border-right: 1px solid #6e6e6e;
 }
 
-.left-side{
+.left-side-container{
   margin: 19px 19px;
   background-color: #ffffff;
   padding: 20px;
   border: 2px solid #d0d2d3;
-}
-
-form {
 }
 
 label {
@@ -91,9 +89,6 @@ label {
 
 input {
   width: 100%;
-}
-
-.set-range {
 }
 
 button {
@@ -118,13 +113,13 @@ button {
   background-color: #D0D2D3;
 }
 
-.name-and-guess {
+.name-and-guess-container {
   margin: 2px 19px;
   display: flex;
   flex-direction: column;
 }
 
-.form-container {
+.form-two-container {
   display: inline-block;
   margin-right: 15%;
 }
@@ -138,14 +133,10 @@ button {
   width: 150%;
 }
 
-.num-range {
+.displayed-num-range {
   font-size: 17px;
   text-decoration: underline;
   font-weight: bold;
-}
-
-.latest-score {
-  
 }
 
 .v-line {
@@ -162,7 +153,7 @@ h4 {
   font-weight: 700;
 }
 
-.total-score {
+.displayed-scores {
   display: flex;
   justify-content: space-around;
   padding: 10px;
@@ -176,10 +167,7 @@ h4 {
   color: #DD1972;
 }
 
-.results-container {
-  
-  }
-
+/*RIGHT SIDE*/
 .results-of-game {
   display: flex;
   flex-direction: column;
@@ -214,18 +202,12 @@ h4 {
   margin-bottom: 25px;
 }
 
-.bottom-shit {
+.bottom-of-results-card {
   display: flex;
   margin: 0px 20px 0px 20px;
   justify-content: space-between;
   border-top: 1px solid black;
   padding-top: 6px;
-}
-
-.guesses-text {
-}
-
-.mins-text {
 }
 
 .number-of-guesses,
@@ -235,6 +217,7 @@ h4 {
   font-weight: 700;
 }
 
+/*MEDIA QUERIES*/
 @media screen and (max-width: 320px) {
   h1 {
     font-size: 30px;
