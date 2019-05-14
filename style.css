@@ -16,13 +16,13 @@ main {
 /*HEADER*/
 header {
   background-color: #404041;
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
 h1 {
   color: #DD1972;
-  font-size: 54px;
+  font-size: 56px;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
 }
@@ -37,16 +37,17 @@ h2 {
   align-items: center;
   color: #ffffff;
   display: flex;
-  font-size: 18px;
+  font-size: 20px;
   margin: auto;
-  padding-bottom: 10px;
-  width: 462px;
+  padding: 10px 0;
+  width: 485px;
   font-family: 'Open Sans', sans-serif;
 }
 
 .line {
-  width: 96px;
+  width: 70px;
   border: 1px solid #ffffff;
+  margin: 0 10px 0 10px;
 }
 
 /*h2:before,
@@ -79,7 +80,8 @@ h2:after {
 
 label {
   display: block;
-  font-size: 20px;
+  font-size: 18px;
+  padding-bottom: 5px;
 }
 
 .range-containers {
@@ -109,17 +111,16 @@ label {
   height: 37px;
 }
 
-.button{
+.button {
   font-weight: 700;
   background-color: #6E6E6E;
   padding: 6px;
   border-radius: 20px;
+  border: 0;
   color: #ffffff;
-  width: 184px;
-  margin: 25px 4px 3px 23px;
-  font-size: 20px;
-  width: 163px;
-  margin-top: 25px;
+  font-size: 18px;
+  width: 180px;
+  margin-top: 30px;
   margin-right: 4%;
 }
 
@@ -128,10 +129,19 @@ label {
   font-weight: 700;
   background-color: #6E6E6E;
   padding: 6px;
-  border-radius: 18px;
+  border-radius: 20px;
   color: #ffffff;
-  width: 151px;
-  font-size: 20px;
+  width: 150px;
+  font-size: 18px;
+  border: 0;
+}
+
+.button:hover {
+  background-color: #DD1972;
+}
+
+.update-button:hover {
+  background-color: #DD1972;
 }
 
 .submit-guess {
@@ -159,7 +169,7 @@ label {
 }
 
 .name {
-  padding: 10px 0;
+  padding: 20px 0 10px 0;
   margin: 5px 0;
 }
 
@@ -189,15 +199,18 @@ label {
 h3 {
   font-weight: 700;
   font-size: 20px;
+  padding-bottom: 5px;
 }
 
 h4 {
   font-weight: 700;
   font-size: 18px;
+  padding-bottom: 10px;
 }
 
-.num-score-1, .num-score-2 {
-  font-size: 18px;
+.num-score-1, 
+.num-score-2 {
+  font-size: 20px;
 }
 
 .displayed-scores {
@@ -215,6 +228,10 @@ h4 {
 }
 
 /*RIGHT SIDE*/
+.right-side-container {
+  background-color: #D0D2D3;
+}
+
 .results-of-game {
   display: flex;
   flex-direction: column;
