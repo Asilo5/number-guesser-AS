@@ -286,6 +286,14 @@ h4 {
   padding-bottom: 5px;
 }
 
+.enableButtonColor {
+  background-color: #6E6E6E
+}
+
+.disableButtonColor {
+  background-color: #D0D2D3
+}
+
 /*MEDIA QUERIES*/
 @media screen and (max-width: 320px) {
   h1 {
