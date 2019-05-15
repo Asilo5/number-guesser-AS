@@ -39,8 +39,9 @@ var inputForm = document.querySelector('.form-one');
 
 var randomNumberChosen;
 
-var rightSideOfGame = document.querySelector('.results-of-game');
+var rightSideOfGame = document.querySelector('.right-side-container');
 
+var winnersName;
 
 
 
@@ -58,8 +59,7 @@ inputForm.addEventListener('keyup', disableClearButton);
 function minAndMaxRangeInput () {
 	firstRange.innerText = minRangeInput.value;
   secondRange.innerText = maxRangeInput.value;
-
-    randomNumber();
+  randomNumber();
 }
 
 function randomNumber() {
@@ -76,7 +76,9 @@ function submitPrintScore () {
 	numberGuessedTwo.innerText = guessTwo.value;
 
   resetGuessButton.disabled = false;
-  resetGuessButton.style = "background-color:#6E6E6E"
+  resetGuessButton.style = "background-color:#6E6E6E";
+
+  valuesWithinRange();
 
 	scoreOutput();
 }
@@ -87,7 +89,6 @@ function resetInputGiven () {
   for (var i = 0; i < allInputs.length; i++) {
     console.log(allInputs[i].value = "");
   }
-  // inputForm.reset();
 
   levelOfScoreOne.innerText = 'Score';
   levelOfScoreTwo.innerText = 'Score';
@@ -104,7 +105,7 @@ function resetInputGiven () {
   randomNumber();
 
   resetGuessButton.disabled = true;
-  resetGuessButton.style = "background-color:#D0D2D3"
+  resetGuessButton.style = "background-color:#D0D2D3";
 
   clearButton.disabled = true;
   clearButton.style = "background-color:#D0D2D3";
@@ -114,26 +115,28 @@ function resetInputGiven () {
 
 function scoreOutput() {
   if (parseInt(guessOne.value) < randomNumberChosen) {
-	  levelOfScoreOne.innerText = `That's too low!`;
+	  levelOfScoreOne.innerText = `that's too low`;
 	  console.log ('Amand');
   } else if (parseInt(guessOne.value) > randomNumberChosen) {
-      levelOfScoreOne.innerText = `That's too high!`;
+      levelOfScoreOne.innerText = `that's too high`;
       console.log ('Consi');
   } else if (parseInt(guessOne.value) === randomNumberChosen) {
       levelOfScoreOne.innerText = `BOOM!`;
       console.log ('Elo');
+      winnersName = firstChallengerName.value;
       winningCard();
   };
 
   if (parseInt(guessTwo.value) < randomNumberChosen) {
-      levelOfScoreTwo.innerText = `That's too low`;
+      levelOfScoreTwo.innerText = `that's too low`;
       console.log ('Sie');
   } else if (parseInt(guessTwo.value) > randomNumberChosen) {
-	  levelOfScoreTwo.innerText = `That's too high!`;
+	  levelOfScoreTwo.innerText = `that's too high`;
 	  console.log ('Rra');
   } else if (parseInt(guessTwo.value) === randomNumberChosen) {
       levelOfScoreTwo.innerText = `BOOM!`;
       console.log ('Lop');
+      winnersName = secondChallengerName.value;
       winningCard();
   };
  } 
@@ -163,31 +166,37 @@ function disableClearButton() {
       console.log('clear button is enabled');
       clearButton.disabled = false;
       clearButton.style = "background-color:#6E6E6E";
-}
-}
+     }
+   }
 };
 
-// rightSideOfGame.addEventListener('click', winningCard);
 
 function winningCard() {
   rightSideOfGame.insertAdjacentHTML('afterbegin', 
-    ` <h3 class="challenger-card-names"><span class="challenger-1-results">CHALLENGER 1 NAME</span> <span class="vs-text">VS</span> <span class="challenger-2-results">CHALLENGER 2 NAME</span></h3>
-      <h5 class="winners-name">CHALLENGER 1 NAME</h5>
+      `<article class="results-of-game">
+      <h3 class="challenger-card-names"><span class="challenger-1-results">${firstChallengerName.value}</span> <span class="vs-text">VS</span> <span class="challenger-2-results">${secondChallengerName.value}</span></h3>
+      <h5 class="winners-name">${winnersName}</h5>
       <h6 class="winner-text">WINNER</h6>
       <div class="bottom-of-results-card">
         <p class="guesses-text"><span class="number-of-guesses">0</span>GUESSES    </p>
         <p class="mins-text"><span class="number-of-mins">0.0</span>MINUTES</p>
         <p>IMG</p>
-      </div>`)
-}
-// function changeButtonColor() {
-// if (clearButton.disabled === true) {
-//   clearButton.style = "background-color:#000000"
-// } else {
-//    clearButton.style = "background-color:#ffffff"
-// }
-// }
-// changeButtonColor();
+      </div>`
+
+  )};
+
+  // The Guess fields should only accept values that fall within the defined min and max range
+
+  function valuesWithinRange() {
+    if(parseInt(guessOne.value) >= parseInt(minRangeInput.value) && parseInt(guessTwo.value) <= parseInt(maxRangeInput.value)) {
+      console.log(`PICK A NUMBER WITHIN RANGE!`);
+    }
+    
+    // if(parseInt(guessTwo.value) <= parseInt(maxRangeInput.value)) {
+    //   console.log(`PICK A MAX NUMBER WITHIN RANGE!`);     
+    // }
+  }
+
 
 // Range Input
 // User will be putting in his min-range and max-range
