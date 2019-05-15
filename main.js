@@ -198,26 +198,23 @@ function valuesWithinRange() {
 
 function disableResetGuessButton() {
   resetGuessButton.disabled = true;
-  // resetGuessButton.style = "background-color:#D0D2D3";
   resetGuessButton.classList.add('disableButtonColor');
 }
 
 function enableResetGuessButton() {
   resetGuessButton.disabled = false;
-  // resetGuessButton.style =  "background-color:#6E6E6E";
   resetGuessButton.classList.add('enableButtonColor');
 }
 
 function disableClearButton() {
-  clearButton.disabled = true;
-  // clearButton.style = "background-color:#D0D2D3";
+  clearButton.disabled = true; 
   clearButton.classList.add('disableButtonColor');
 }
 
 function enableClearButton() {
   clearButton.disabled = false;
-  // clearButton.style = "background-color:#6E6E6E";
   clearButton.classList.add('enableButtonColor');
+  clearButton.classList.remove('disableButtonColor');
 
 }
 
