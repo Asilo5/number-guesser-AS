@@ -90,8 +90,6 @@ function submitPrintScore() {
 
 	scoreOutput(guessOne.value, guessTwo.value);
 
-  randomNumber();
-
   clearGame();
 }
 
@@ -135,6 +133,7 @@ function scoreOutput(guessOne, guessTwo) {
       console.log ('Elo');
       winnersName = firstChallengerName.value;
       winningCard();
+      randomNumber();
   };
 
   if (parseInt(guessTwo) < randomNumberChosen) {
@@ -148,6 +147,7 @@ function scoreOutput(guessOne, guessTwo) {
       console.log ('Lop');
       winnersName = secondChallengerName.value;
       winningCard();
+      randomNumber();
   };
  } 
  
