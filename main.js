@@ -18,6 +18,7 @@ var secondChallengerName = document.querySelector('#name-challenger-2');
 
 var guessOne = document.querySelector('#guess-1');
 var guessTwo = document.querySelector('#guess-2');
+var bothGuesses = document.querySelectorAll('.guess-box')
 
 var submitGuessButton = document.querySelector('.submit-guess');
 
@@ -36,6 +37,7 @@ var levelOfScoreOne = document.querySelector('.num-score-1');
 var levelOfScoreTwo = document.querySelector('.num-score-2');
 
 var inputForm = document.querySelector('.form-one');
+var secondInputForm = document.querySelector('.form-two');
 
 var randomNumberChosen;
 
@@ -53,13 +55,15 @@ resetGuessButton.addEventListener('click', resetInputGiven);
 
 clearButton.addEventListener('click', clearGame);
 
-inputForm.addEventListener('keyup', disableClearButton);
-
+guessOne.addEventListener('keyup', displayClearButton);
+guessTwo.addEventListener('keyup', displayClearButton);
 
 function minAndMaxRangeInput () {
 	firstRange.innerText = minRangeInput.value;
   secondRange.innerText = maxRangeInput.value;
   randomNumber();
+  minRangeInput.value = "";
+  maxRangeInput.value = "";
 }
 
 function randomNumber() {
@@ -75,8 +79,7 @@ function submitPrintScore () {
 	numberGuessedOne.innerText = guessOne.value;
 	numberGuessedTwo.innerText = guessTwo.value;
 
-  resetGuessButton.disabled = false;
-  resetGuessButton.style = "background-color:#6E6E6E";
+  enableResetGuessButton();
 
   valuesWithinRange();
 
@@ -104,11 +107,9 @@ function resetInputGiven () {
 
   randomNumber();
 
-  resetGuessButton.disabled = true;
-  resetGuessButton.style = "background-color:#D0D2D3";
+  disableResetGuessButton();
 
-  clearButton.disabled = true;
-  clearButton.style = "background-color:#D0D2D3";
+  disableClearButton();
 }
 
 
@@ -147,11 +148,10 @@ function scoreOutput() {
 
 
 function clearGame() {
-  for (var i = 0; i < allInputs.length; i++) {
-  	console.log(allInputs[i].value = "");
+  for (var i = 0; i < bothGuesses.length; i++) {
+  	console.log(bothGuesses[i].value = "");
   }
-  clearButton.disabled = true;
-  clearButton.style = "background-color:#D0D2D3";
+  disableClearButton();
 }
 
 
@@ -160,14 +160,13 @@ function clearGame() {
 //"this" calls the event listener - check the length
 
 
-function disableClearButton() {
-  for (var i = 0; i < allInputs.length; i++) {
-    if (allInputs[i].value !== "") {
-      console.log('clear button is enabled');
-      clearButton.disabled = false;
-      clearButton.style = "background-color:#6E6E6E";
+function displayClearButton() {
+     for (var i = 0; i < bothGuesses.length; i++) {
+      if (bothGuesses[i].value !== "") {
+        console.log('enable button')
+        enableClearButton();
+      }
      }
-   }
 };
 
 
@@ -187,9 +186,9 @@ function winningCard() {
 
   // The Guess fields should only accept values that fall within the defined min and max range
 
-  function valuesWithinRange() {
-    if(parseInt(guessOne.value) >= parseInt(minRangeInput.value) && parseInt(guessTwo.value) <= parseInt(maxRangeInput.value)) {
-      console.log(`PICK A NUMBER WITHIN RANGE!`);
+function valuesWithinRange() {
+  if(parseInt(guessOne.value) >= parseInt(minRangeInput.value) && parseInt(guessTwo.value) <= parseInt(maxRangeInput.value)) {
+    console.log(`PICK A NUMBER WITHIN RANGE!`);
     }
     
     // if(parseInt(guessTwo.value) <= parseInt(maxRangeInput.value)) {
@@ -197,6 +196,25 @@ function winningCard() {
     // }
   }
 
+function disableResetGuessButton() {
+  resetGuessButton.disabled = true;
+  resetGuessButton.style = "background-color:#D0D2D3";
+}
+
+function enableResetGuessButton() {
+  resetGuessButton.disabled = false;
+  resetGuessButton.style =  "background-color:#6E6E6E";
+}
+
+function disableClearButton() {
+  clearButton.disabled = true;
+  clearButton.style = "background-color:#D0D2D3";
+}
+
+function enableClearButton() {
+  clearButton.disabled = false;
+  clearButton.style = "background-color:#6E6E6E";
+}
 
 // Range Input
 // User will be putting in his min-range and max-range
