@@ -68,7 +68,7 @@ function minAndMaxRangeInput () {
 
 function randomNumber() {
 	randomNumberChosen = Math.floor(Math.random() * (Number(maxRangeInput.value) - Number(minRangeInput.value) + 1) + Number(minRangeInput.value));
-  console.log(randomNumberChosen);
+  console.log(randomNumberChosen);  
 }
 
 
