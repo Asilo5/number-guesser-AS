@@ -295,7 +295,7 @@ h4 {
 }
 
 /*MEDIA QUERIES*/
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   h1 {
     font-size: 30px;
   }

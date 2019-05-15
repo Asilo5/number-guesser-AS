@@ -58,21 +58,21 @@ clearButton.addEventListener('click', clearGame);
 guessOne.addEventListener('keyup', displayClearButton);
 guessTwo.addEventListener('keyup', displayClearButton);
 
-function minAndMaxRangeInput () {
+function minAndMaxRangeInput() {
 	firstRange.innerText = minRangeInput.value;
   secondRange.innerText = maxRangeInput.value;
   randomNumber();
-  minRangeInput.value = "";
-  maxRangeInput.value = "";
+  // minRangeInput.value = "";
+  // maxRangeInput.value = "";
 }
 
 function randomNumber() {
 	randomNumberChosen = Math.floor(Math.random() * (Number(maxRangeInput.value) - Number(minRangeInput.value) + 1) + Number(minRangeInput.value));
-  console.log(randomNumberChosen);
+  console.log(randomNumberChosen);  
 }
 
 
-function submitPrintScore () {
+function submitPrintScore() {
 	challengerScoreOne.innerText = firstChallengerName.value;
 	challengerScoreTwo.innerText = secondChallengerName.value;
 
@@ -84,11 +84,15 @@ function submitPrintScore () {
   valuesWithinRange();
 
 	scoreOutput();
+
+  randomNumber();
+
+  clearGame();
 }
 
 // Function that resets the the form
 
-function resetInputGiven () {
+function resetInputGiven() {
   for (var i = 0; i < allInputs.length; i++) {
     console.log(allInputs[i].value = "");
   }
