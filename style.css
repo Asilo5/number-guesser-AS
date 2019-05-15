@@ -231,15 +231,15 @@ h4 {
 /*RIGHT SIDE*/
 .right-side-container {
   background-color: #D0D2D3;
+  width: 50%;
 }
 
 .results-of-game {
-  display: flex;
-  flex-direction: column;
   text-align: center;
   background-color: #ffffff;
-  margin: 20px 40px 0px 77px;
-  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
   padding: 10px;
   border: 1px solid #6e6e6e;
 }
@@ -286,6 +286,18 @@ h4 {
   border-bottom: 2px solid #d0d2d3;
   margin: 0px 20px 0px 20px;
   padding: 5px 0 10px 0;
+}
+
+.x-button {
+  background-color: #6E6E6E;
+  border-radius: 80%;
+  border: 0;
+  color: #ffffff;
+  font-size: 16px;
+  margin: 0px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
 }
 
 .enableButtonColor {

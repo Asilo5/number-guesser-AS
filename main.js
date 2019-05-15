@@ -134,7 +134,7 @@ function scoreOutput(guessOne, guessTwo) {
       winnersName = firstChallengerName.value;
       winningCard();
       randomNumber();
-  };
+  }
 
   if (parseInt(guessTwo) < randomNumberChosen) {
       levelOfScoreTwo.innerText = `that's too low`;
@@ -148,7 +148,7 @@ function scoreOutput(guessOne, guessTwo) {
       winnersName = secondChallengerName.value;
       winningCard();
       randomNumber();
-  };
+  }
  } 
  
 
