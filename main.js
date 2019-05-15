@@ -163,7 +163,7 @@ function clearGame() {
 function displayClearButton() {
      for (var i = 0; i < bothGuesses.length; i++) {
       if (bothGuesses[i].value !== "") {
-        console.log('enable button')
+        console.log('enable button');
         enableClearButton();
       }
      }
