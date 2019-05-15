@@ -193,7 +193,8 @@ label {
 
 .v-line {
   display: flex;
-  border: 1px solid gray;
+  border: 1px solid #d0d2d3;
+  position: relative;
 }
 
 h3 {
@@ -238,26 +239,27 @@ h4 {
   text-align: center;
   background-color: #ffffff;
   margin: 20px 40px 0px 77px;
-  width: 146%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #6e6e6e;
 }
 
 .challenger-1-results,
 .challenger-2-results {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
 }
 
 .vs-text {
   font-size: 14px;
-  padding: 10px;
+  font-weight: 300;
+  padding: 0 20px 0 20px;
 }
 
 .winners-name {
-  font-size: 33px;
+  font-size: 40px;
   font-weight: 700;
-  padding-top: 30px;
+  padding: 30px 0 5px 0;
 }
 
 .winner-text {
@@ -267,10 +269,10 @@ h4 {
 
 .bottom-of-results-card {
   display: flex;
-  margin: 0px 20px 0px 20px;
+  margin: 0 20px 0 20px;
   justify-content: space-between;
-  border-top: 1px solid black;
-  padding-top: 6px;
+  border-top: 2px solid #d0d2d3;
+  padding: 15px 0 5px 0;
 }
 
 .number-of-guesses,
@@ -281,20 +283,24 @@ h4 {
 } 
 
 .challenger-card-names {
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #d0d2d3;
   margin: 0px 20px 0px 20px;
-  padding-bottom: 5px;
+  padding: 5px 0 10px 0;
 }
 
 .enableButtonColor {
-  background-color: #6E6E6E
+  background-color: #6E6E6E;
 }
 
 .disableButtonColor {
-  background-color: #D0D2D3
+  background-color: #D0D2D3;
 }
 
 /*MEDIA QUERIES*/
+@media screen and (max-width: 1200px) {
+
+}
+
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 30px;
@@ -360,10 +366,4 @@ h4 {
     padding-bottom: 5px;
   }
 
-}
-
-@media screen and (max-width: 954px) {
-   main {
-    flex-direction: column;
-  }
 }

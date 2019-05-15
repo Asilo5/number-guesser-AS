@@ -46,7 +46,7 @@ var rightSideOfGame = document.querySelector('.right-side-container');
 var winnersName;
 
 
-
+window.addEventListener('load', initialRandomNumber);
 updateButton.addEventListener('click', minAndMaxRangeInput);
 
 submitGuessButton.addEventListener('click', submitPrintScore);
@@ -66,6 +66,11 @@ function minAndMaxRangeInput() {
   // maxRangeInput.value = "";
 }
 
+function initialRandomNumber() {
+  initalRandomNumberChosen = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+  console.log(initalRandomNumberChosen);  
+}
+
 function randomNumber() {
 	randomNumberChosen = Math.floor(Math.random() * (Number(maxRangeInput.value) - Number(minRangeInput.value) + 1) + Number(minRangeInput.value));
   console.log(randomNumberChosen);  
@@ -83,7 +88,7 @@ function submitPrintScore() {
 
   valuesWithinRange();
 
-	scoreOutput();
+	scoreOutput(guessOne.value, guessTwo.value);
 
   randomNumber();
 
@@ -118,27 +123,27 @@ function resetInputGiven() {
 
 
 
-function scoreOutput() {
-  if (parseInt(guessOne.value) < randomNumberChosen) {
+function scoreOutput(guessOne, guessTwo) {
+  if (parseInt(guessOne) < randomNumberChosen) {
 	  levelOfScoreOne.innerText = `that's too low`;
 	  console.log ('Amand');
-  } else if (parseInt(guessOne.value) > randomNumberChosen) {
+  } else if (parseInt(guessOne) > randomNumberChosen) {
       levelOfScoreOne.innerText = `that's too high`;
       console.log ('Consi');
-  } else if (parseInt(guessOne.value) === randomNumberChosen) {
+  } else if (parseInt(guessOne) === randomNumberChosen) {
       levelOfScoreOne.innerText = `BOOM!`;
       console.log ('Elo');
       winnersName = firstChallengerName.value;
       winningCard();
   };
 
-  if (parseInt(guessTwo.value) < randomNumberChosen) {
+  if (parseInt(guessTwo) < randomNumberChosen) {
       levelOfScoreTwo.innerText = `that's too low`;
       console.log ('Sie');
-  } else if (parseInt(guessTwo.value) > randomNumberChosen) {
+  } else if (parseInt(guessTwo) > randomNumberChosen) {
 	  levelOfScoreTwo.innerText = `that's too high`;
 	  console.log ('Rra');
-  } else if (parseInt(guessTwo.value) === randomNumberChosen) {
+  } else if (parseInt(guessTwo) === randomNumberChosen) {
       levelOfScoreTwo.innerText = `BOOM!`;
       console.log ('Lop');
       winnersName = secondChallengerName.value;
