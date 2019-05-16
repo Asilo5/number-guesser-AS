@@ -12,7 +12,9 @@ Our team of two worked together to create the Number Guesser game. We wanted to 
 
 ### Images
 
-*Original comp*
+**Original Comp**
 ![image](https://user-images.githubusercontent.com/45364533/57863330-21205b80-77b7-11e9-8f31-8b080e6ffbe3.png)
 
-*Our final comp*
+**Our Final Comp**
+![image](https://user-images.githubusercontent.com/45364533/57863845-04d0ee80-77b8-11e9-9056-0a299a3bde87.png)
+
