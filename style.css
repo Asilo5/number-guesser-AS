@@ -170,7 +170,7 @@ label {
 
 .name {
   padding: 20px 0 10px 0;
-  margin: 5px 0;
+  margin-top: 26px;
 }
 
 .name-input {
@@ -292,6 +292,13 @@ h4 {
 
 .disableButtonColor {
   background-color: #D0D2D3
+}
+
+/*error messages */
+
+.color {
+  color: #DD1972;
+  padding: 2px;
 }
 
 /*MEDIA QUERIES*/

@@ -1,9 +1,3 @@
-
-
-// Range Input
-// User will be putting in his min-range and max-range
-// When they press update, min and max range will be stored and used to print current range in the name and guess section
-// Min and Max variables will also be used to make sure user does not go out of range
 var allInputs = document.querySelectorAll('input');
 
 var minRangeInput = document.querySelector('#min-range');
@@ -45,6 +39,15 @@ var rightSideOfGame = document.querySelector('.right-side-container');
 
 var winnersName;
 
+var rangeErrorMsg = document.querySelector('.range-error');
+
+var guessErrorMsg = document.querySelector('.guess-error-msg1');
+
+var secondGuessErrorMsg = document.querySelector('.guess-error-msg2');
+
+var nameErrorMsg = document.querySelector('.name-error-msg');
+
+var message = document.querySelector('.messages');
 
 
 updateButton.addEventListener('click', minAndMaxRangeInput);
@@ -58,12 +61,12 @@ clearButton.addEventListener('click', clearGame);
 guessOne.addEventListener('keyup', displayClearButton);
 guessTwo.addEventListener('keyup', displayClearButton);
 
+// submitGuessButton.disabled = true;
+
 function minAndMaxRangeInput() {
 	firstRange.innerText = minRangeInput.value;
   secondRange.innerText = maxRangeInput.value;
   randomNumber();
-  // minRangeInput.value = "";
-  // maxRangeInput.value = "";
 }
 
 function randomNumber() {
@@ -73,22 +76,43 @@ function randomNumber() {
 
 
 function submitPrintScore() {
+
 	challengerScoreOne.innerText = firstChallengerName.value;
 	challengerScoreTwo.innerText = secondChallengerName.value;
 
 	numberGuessedOne.innerText = guessOne.value;
 	numberGuessedTwo.innerText = guessTwo.value;
 
-  enableResetGuessButton();
+  minValuesWithinRange();
+  maxValueWithinRange();
+  console.log('Submited');
+  // firstEmptyRangeInput();
+  // secondEmptyRangeInput();
+  // emptyChallengerNameOne();
+  // emptyChallengerNameTwo();
 
-  valuesWithinRange();
+
+  enableResetGuessButton();
 
 	scoreOutput();
 
   randomNumber();
 
   clearGame();
+
+  // disableSubmitButton();
 }
+
+// function disableSubmitButton() {
+
+//   if (firstChallengerName.value !== "" || secondChallengerName.value !== "") {
+//     submitGuessButton.disabled = false;
+//   } 
+
+//    if (guessOne.value !== "" || guessTwo.value !== "") {
+//     submitGuessButton.disabled = false;
+//   } 
+// }
 
 // Function that resets the the form
 
@@ -121,34 +145,24 @@ function resetInputGiven() {
 function scoreOutput() {
   if (parseInt(guessOne.value) < randomNumberChosen) {
 	  levelOfScoreOne.innerText = `that's too low`;
-	  console.log ('Amand');
   } else if (parseInt(guessOne.value) > randomNumberChosen) {
       levelOfScoreOne.innerText = `that's too high`;
-      console.log ('Consi');
   } else if (parseInt(guessOne.value) === randomNumberChosen) {
       levelOfScoreOne.innerText = `BOOM!`;
-      console.log ('Elo');
       winnersName = firstChallengerName.value;
       winningCard();
   };
 
   if (parseInt(guessTwo.value) < randomNumberChosen) {
       levelOfScoreTwo.innerText = `that's too low`;
-      console.log ('Sie');
   } else if (parseInt(guessTwo.value) > randomNumberChosen) {
 	  levelOfScoreTwo.innerText = `that's too high`;
-	  console.log ('Rra');
   } else if (parseInt(guessTwo.value) === randomNumberChosen) {
       levelOfScoreTwo.innerText = `BOOM!`;
-      console.log ('Lop');
       winnersName = secondChallengerName.value;
       winningCard();
   };
  } 
- 
-
-//Create a function that clears all of the number inputs
-//The function should go through and empty out each input
 
 
 function clearGame() {
@@ -157,11 +171,6 @@ function clearGame() {
   }
   disableClearButton();
 }
-
-
-//disabled when entered
-//event listener added to the input fields
-//"this" calls the event listener - check the length
 
 
 function displayClearButton() {
@@ -188,17 +197,80 @@ function winningCard() {
 
   )};
 
+  // nameErrorMsg.removeAttribute('hidden');
+
   // The Guess fields should only accept values that fall within the defined min and max range
 
-function valuesWithinRange() {
-  if(parseInt(guessOne.value) >= parseInt(minRangeInput.value) && parseInt(guessTwo.value) <= parseInt(maxRangeInput.value)) {
-    console.log(`PICK A NUMBER WITHIN RANGE!`);
-    }
-    
-    // if(parseInt(guessTwo.value) <= parseInt(maxRangeInput.value)) {
-    //   console.log(`PICK A MAX NUMBER WITHIN RANGE!`);     
-    // }
+function minValuesWithinRange() {
+  if(parseInt(guessOne.value) < parseInt(minRangeInput.value)) {
+      guessErrorMsg.insertAdjacentHTML('afterbegin', 
+        `<p class="guess-error-msg1 color">Number out of range!</p>`)
+        console.log('This is not a valid input');
+        guessErrorMsg.classList.add('color');
+    } else {
+      guessErrorMsg.innerText= "";
+       guessErrorMsg.classList.remove('color');
+      };
   }
+
+function maxValueWithinRange() {
+  if(parseInt(guessTwo.value) > parseInt(maxRangeInput.value)) {
+    guessErrorMsg.insertAdjacentHTML('afterbegin',
+      `<p class="guess-error-msg2 color">Number out of range!</p>`
+      )
+       guessErrorMsg.classList.add('color');
+  } else {
+        guessErrorMsg.innerText= "";
+      };
+
+}
+
+// function firstEmptyRangeInput() {
+//   if (guessOne.value === " "){
+//     secondGuessErrorMsg.insertAdjacentHTML('afterbegin',
+//       `<p class="guess-error-msg2">Enter guess!</p>`
+//       )
+//       secondGuessErrorMsg.add('color');
+//   } else {
+//       guessErrorMsg.innerText= "";
+//       };
+//   }
+
+// function secondEmptyRangeInput() {
+//   if(guessTwo.value === " ") {
+//     secondGuessErrorMsg.insertAdjacentHTML('afterbegin',
+//       `<p class="guess-error-msg2 color">Enter guess!</p>`
+//       )
+//       secondGuessErrorMsg.add('color');
+//   } else {
+//       guessErrorMsg.innerText= "";
+//       };
+// }
+
+// function emptyChallengerNameOne() {
+//   if(firstChallengerName === "") {
+//     insertAdjacentHTML('afterbegin',
+//      `<p class="name-error-msg color">Enter name!</p>`
+//     )
+//      nameErrorMsg.add('color');
+     
+//   } else {
+//     guessErrorMsg.innerText= "";
+//       };
+// }
+
+// function emptyChallengerNameTwo() {
+//   if(secondChallengerName === "") {
+//     insertAdjacentHTML('afterbegin',
+//       `<p class="name-error-msg color">Enter name!</p>`
+//       )
+//       nameErrorMsg.add('color');
+//   } else {
+//       guessErrorMsg.innerText= "";
+//       };
+// }
+
+// disableResetGuess
 
 function disableResetGuessButton() {
   resetGuessButton.disabled = true;
@@ -221,33 +293,3 @@ function enableClearButton() {
   clearButton.classList.remove('disableButtonColor');
 
 }
-
-// Range Input
-// User will be putting in his min-range and max-range
-// When they press update, min and max range will be stored and used to print current range in the name and guess section
-// Min and Max variables will also be used to make sure user does not go out of range
-
-
-// Name and Guess
-// Reminder of ranges lies at the top to remind user to choose a number between them
-// User fills in name and guess
-// User submits guess
-// Reset guess button deletes guess
-// Clear game button deletes name and guess
-// If name or guess is not inputed, error message pops up
-
-
-// Latests Score
-// Shows the name input from two players entered in box above
-// Shows if current guess was too low or too high for each of the two players
-// Player has to keep guessing until one of them has the right answer
-
-//Results of Game
-// Winner pops up on the left side of the page 
-// Prints out names of both users
-// Shows how many minutes it took them to guess the right number
-// User can close winner window with the close button in the bottom
-
-// Variables at the top
-// Event Listeners in the middle
-// At the end functions
