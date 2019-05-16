@@ -9,6 +9,7 @@ var allInputs = document.querySelectorAll('input');
 var minRangeInput = document.querySelector('#min-range');
 var maxRangeInput = document.querySelector('#max-range');
 var updateButton = document.querySelector('.update-button');
+var range = document.querySelectorAll('.range');
 
 var firstRange = document.querySelector('.range-one');
 var secondRange = document.querySelector('.range-two'); 
@@ -55,8 +56,8 @@ resetGuessButton.addEventListener('click', resetInputGiven);
 
 clearButton.addEventListener('click', clearGame);
 
-guessOne.addEventListener('keyup', displayClearButton);
-guessTwo.addEventListener('keyup', displayClearButton);
+minRangeInput.addEventListener('keyup', displayClearButton);
+maxRangeInput.addEventListener('keyup', displayClearButton);
 
 function minAndMaxRangeInput() {
 	firstRange.innerText = minRangeInput.value;
@@ -90,7 +91,9 @@ function submitPrintScore() {
 
 	scoreOutput(guessOne.value, guessTwo.value);
 
-  clearGame();
+  guessOne.value = "";
+  guessTwo.value = "";
+
 }
 
 // Function that resets the the form
@@ -157,8 +160,8 @@ function scoreOutput(guessOne, guessTwo) {
 
 
 function clearGame() {
-  for (var i = 0; i < bothGuesses.length; i++) {
-  	console.log(bothGuesses[i].value = "");
+  for (var i = 0; i < range.length; i++) {
+  	console.log(range[i].value = "");
   }
   disableClearButton();
 }
@@ -170,8 +173,8 @@ function clearGame() {
 
 
 function displayClearButton() {
-     for (var i = 0; i < bothGuesses.length; i++) {
-      if (bothGuesses[i].value !== "") {
+     for (var i = 0; i < range.length; i++) {
+      if (range[i].value !== "") {
         console.log('enable button');
         enableClearButton();
       }
