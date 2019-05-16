@@ -10,7 +10,7 @@ Our team of two worked together to create a Number Guesser game. We wanted to cr
 - CSS
 - JavaScript
 
-### Images
+### Screenshots
 
 **Original Comp**
 ![image](https://user-images.githubusercontent.com/45364533/57863330-21205b80-77b7-11e9-8f31-8b080e6ffbe3.png)
