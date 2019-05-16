@@ -297,6 +297,13 @@ h4 {
   background-color: #D0D2D3;
 }
 
+/*error messages */
+
+.color {
+  color: #DD1972;
+  padding: 2px;
+}
+
 /*MEDIA QUERIES*/
 @media screen and (max-width: 1350px) {
   .update-button {
