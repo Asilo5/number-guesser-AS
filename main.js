@@ -9,6 +9,7 @@ var allInputs = document.querySelectorAll('input');
 var minRangeInput = document.querySelector('#min-range');
 var maxRangeInput = document.querySelector('#max-range');
 var updateButton = document.querySelector('.update-button');
+var range = document.querySelectorAll('.range');
 
 var firstRange = document.querySelector('.range-one');
 var secondRange = document.querySelector('.range-two'); 
@@ -46,7 +47,7 @@ var rightSideOfGame = document.querySelector('.right-side-container');
 var winnersName;
 
 
-
+window.addEventListener('load', initialRandomNumber);
 updateButton.addEventListener('click', minAndMaxRangeInput);
 
 submitGuessButton.addEventListener('click', submitPrintScore);
@@ -55,8 +56,8 @@ resetGuessButton.addEventListener('click', resetInputGiven);
 
 clearButton.addEventListener('click', clearGame);
 
-guessOne.addEventListener('keyup', displayClearButton);
-guessTwo.addEventListener('keyup', displayClearButton);
+minRangeInput.addEventListener('keyup', displayClearButton);
+maxRangeInput.addEventListener('keyup', displayClearButton);
 
 function minAndMaxRangeInput() {
 	firstRange.innerText = minRangeInput.value;
@@ -64,6 +65,11 @@ function minAndMaxRangeInput() {
   randomNumber();
   // minRangeInput.value = "";
   // maxRangeInput.value = "";
+}
+
+function initialRandomNumber() {
+  initalRandomNumberChosen = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+  console.log(initalRandomNumberChosen);  
 }
 
 function randomNumber() {
@@ -83,11 +89,11 @@ function submitPrintScore() {
 
   valuesWithinRange();
 
-	scoreOutput();
+	scoreOutput(guessOne.value, guessTwo.value);
 
-  randomNumber();
+  guessOne.value = "";
+  guessTwo.value = "";
 
-  clearGame();
 }
 
 // Function that resets the the form
@@ -118,32 +124,34 @@ function resetInputGiven() {
 
 
 
-function scoreOutput() {
-  if (parseInt(guessOne.value) < randomNumberChosen) {
+function scoreOutput(guessOne, guessTwo) {
+  if (parseInt(guessOne) < randomNumberChosen) {
 	  levelOfScoreOne.innerText = `that's too low`;
 	  console.log ('Amand');
-  } else if (parseInt(guessOne.value) > randomNumberChosen) {
+  } else if (parseInt(guessOne) > randomNumberChosen) {
       levelOfScoreOne.innerText = `that's too high`;
       console.log ('Consi');
-  } else if (parseInt(guessOne.value) === randomNumberChosen) {
+  } else if (parseInt(guessOne) === randomNumberChosen) {
       levelOfScoreOne.innerText = `BOOM!`;
       console.log ('Elo');
       winnersName = firstChallengerName.value;
       winningCard();
-  };
+      randomNumber();
+  }
 
-  if (parseInt(guessTwo.value) < randomNumberChosen) {
+  if (parseInt(guessTwo) < randomNumberChosen) {
       levelOfScoreTwo.innerText = `that's too low`;
       console.log ('Sie');
-  } else if (parseInt(guessTwo.value) > randomNumberChosen) {
+  } else if (parseInt(guessTwo) > randomNumberChosen) {
 	  levelOfScoreTwo.innerText = `that's too high`;
 	  console.log ('Rra');
-  } else if (parseInt(guessTwo.value) === randomNumberChosen) {
+  } else if (parseInt(guessTwo) === randomNumberChosen) {
       levelOfScoreTwo.innerText = `BOOM!`;
       console.log ('Lop');
       winnersName = secondChallengerName.value;
       winningCard();
-  };
+      randomNumber();
+  }
  } 
  
 
@@ -152,8 +160,8 @@ function scoreOutput() {
 
 
 function clearGame() {
-  for (var i = 0; i < bothGuesses.length; i++) {
-  	console.log(bothGuesses[i].value = "");
+  for (var i = 0; i < range.length; i++) {
+  	console.log(range[i].value = "");
   }
   disableClearButton();
 }
@@ -165,8 +173,8 @@ function clearGame() {
 
 
 function displayClearButton() {
-     for (var i = 0; i < bothGuesses.length; i++) {
-      if (bothGuesses[i].value !== "") {
+     for (var i = 0; i < range.length; i++) {
+      if (range[i].value !== "") {
         console.log('enable button');
         enableClearButton();
       }
@@ -183,7 +191,7 @@ function winningCard() {
       <div class="bottom-of-results-card">
         <p class="guesses-text"><span class="number-of-guesses">0</span>GUESSES    </p>
         <p class="mins-text"><span class="number-of-mins">0.0</span>MINUTES</p>
-        <p>IMG</p>
+        <button class="x-button">x</button>
       </div>`
 
   )};
